@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code is Alive.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container"></div>
+    <audio id="audio" src="luvvoice.mp3"></audio>
+    <img id="computers" src="blakes.png">
+    <img id="lemoine" src="lemoine.jpg">
+    <img id="police" src="police.jpeg">
+    <img id="ending" src="ending.png">
+    <div id="warning">It is a fiction.</div>
+    <script src="script.js"></script>
+    <script src="audio.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+      const warningDiv = document.getElementById('warning');
+
+      const detectDevTools = () => {
+        const threshold = 160;
+        const widthDiff = window.outerWidth - window.innerWidth;
+        const heightDiff = window.outerHeight - window.innerHeight;
+
+        const devToolsOpen = widthDiff > threshold || heightDiff > threshold;
+
+        // Show or hide the warning div based on DevTools state
+        warningDiv.style.display = devToolsOpen ? 'flex' : 'none';
+      };
+
+      // Start detection after the page has fully loaded
+      setInterval(detectDevTools, 500);
+    });
+    </script>
+</body>
+
+</html>
